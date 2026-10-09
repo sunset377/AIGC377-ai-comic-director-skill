@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="AI 漫剧导演 Skill：在浏览器本地把剧本文本整理成分镜预案与资产清单。">
+  <title>AI 漫剧导演 Skill</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main>
+    <header>
+      <div>
+        <p class="eyebrow">OPEN SOURCE · LOCAL DEMO</p>
+        <h1>AI 漫剧导演 Skill</h1>
+        <p class="intro">粘贴或选择一份剧本，生成可继续深化的分镜预案和资产清单。全部处理在当前浏览器完成。</p>
+      </div>
+      <a class="repo-link" href="https://github.com/sunset377/AIGC377-ai-comic-director-skill">查看 GitHub</a>
+    </header>
+
+    <section class="workspace" aria-labelledby="input-title">
+      <div class="editor-panel">
+        <div class="panel-heading">
+          <div><span class="step">01</span><h2 id="input-title">输入剧本</h2></div>
+          <label class="file-button" for="script-file">选择 .txt / .md</label>
+          <input id="script-file" type="file" accept=".txt,.md,text/plain,text/markdown">
+        </div>
+        <textarea id="script-input" spellcheck="false" aria-label="剧本文本">雨夜。旧楼电梯停在七层，林澈收到一张写着“00:07”的陌生检修票。
+林澈：这栋楼明明只有六张票。
+许冬遥撑着透明伞走进大厅，把一份泛黄档案放在桌上。
+监控画面忽然缺失七秒，电梯里的停止键自己亮起。
+许冬遥：我们还没有做决定，但录像里的你已经按下去了。</textarea>
+        <div class="editor-footer">
+          <span>文件不会离开你的设备</span>
+          <button id="generate-button" type="button">生成导演预案</button>
+        </div>
+      </div>
+
+      <div class="output-panel" aria-live="polite">
+        <div class="panel-heading">
+          <div><span class="step">02</span><h2>导演输出</h2></div>
+          <span id="status" class="status">等待生成</span>
+        </div>
+        <div class="summary">
+          <div><span>镜头</span><strong id="shot-count">—</strong></div>
+          <div><span>预计时长</span><strong id="duration">—</strong></div>
+          <div><span>资产</span><strong id="asset-count">—</strong></div>
+        </div>
+        <div class="result-block">
+          <h3>分镜表</h3>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>#</th><th>时长</th><th>景别 / 运镜</th><th>画面与动作</th></tr></thead>
+              <tbody id="storyboard-body"><tr><td colspan="4" class="empty">生成后在这里查看分镜</td></tr></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="result-block">
+          <h3>资产清单</h3>
+          <div id="asset-list" class="asset-list"><span class="empty">等待分析角色、场景与道具</span></div>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <span>演示仅展示输出结构，不连接账号、不运行付费生成。</span>
+      <span>MIT License · v2.0.0</span>
+    </footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

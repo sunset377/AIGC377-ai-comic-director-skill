@@ -1,0 +1,62 @@
+:root {
+  color-scheme: dark;
+  font-family: Inter, "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  background: #07090c;
+  color: #f3f5f7;
+  font-size: 16px;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 320px; background: radial-gradient(circle at 10% 5%, rgba(255, 91, 55, .13), transparent 28rem), radial-gradient(circle at 90% 20%, rgba(69, 203, 177, .08), transparent 24rem), #07090c; }
+button, textarea, input { font: inherit; }
+main { width: min(1440px, 100%); margin: 0 auto; padding: 36px; }
+header { display: flex; align-items: end; justify-content: space-between; gap: 32px; margin-bottom: 28px; }
+.eyebrow, .step { color: #ff6a3d; font: 700 .75rem/1.2 ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: .14em; }
+h1 { margin: 8px 0 10px; font-size: clamp(2rem, 5vw, 4.5rem); line-height: .95; letter-spacing: -.06em; }
+.intro { max-width: 720px; margin: 0; color: #9da4ad; line-height: 1.7; }
+.repo-link, .file-button, button { border: 1px solid #353a42; border-radius: 999px; color: #fff; text-decoration: none; padding: 11px 18px; cursor: pointer; background: #14171c; }
+.repo-link:hover, .file-button:hover { border-color: #ff6a3d; }
+.workspace { display: grid; grid-template-columns: minmax(0, .82fr) minmax(0, 1.18fr); gap: 18px; }
+.editor-panel, .output-panel { border: 1px solid #23272e; background: rgba(12, 15, 19, .94); border-radius: 24px; overflow: hidden; }
+.panel-heading { min-height: 74px; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 18px 20px; border-bottom: 1px solid #23272e; }
+.panel-heading > div { display: flex; align-items: center; gap: 12px; }
+h2, h3 { margin: 0; }
+h2 { font-size: 1rem; }
+h3 { font-size: .875rem; color: #d8dce1; }
+#script-file { position: absolute; inline-size: 1px; block-size: 1px; opacity: 0; pointer-events: none; }
+textarea { display: block; width: 100%; min-height: 510px; resize: vertical; border: 0; outline: 0; padding: 24px; color: #e8ebee; background: transparent; line-height: 1.85; }
+.editor-footer { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 16px 20px; border-top: 1px solid #23272e; color: #777f89; font-size: .8125rem; }
+button { border-color: #ff6a3d; background: #ff6a3d; color: #160804; font-weight: 800; }
+button:hover { background: #ff815e; }
+button:focus-visible, .repo-link:focus-visible, .file-button:focus-visible, textarea:focus-visible { outline: 3px solid rgba(255, 106, 61, .35); outline-offset: 3px; }
+.status { border-radius: 999px; padding: 7px 10px; background: #191d22; color: #8e97a2; font-size: .75rem; }
+.status.ready { color: #8aefd7; background: rgba(49, 174, 145, .12); }
+.summary { display: grid; grid-template-columns: repeat(3, 1fr); border-bottom: 1px solid #23272e; }
+.summary div { padding: 20px; border-right: 1px solid #23272e; }
+.summary div:last-child { border-right: 0; }
+.summary span { display: block; margin-bottom: 8px; color: #7d858f; font-size: .75rem; }
+.summary strong { font-size: 1.5rem; }
+.result-block { padding: 20px; border-bottom: 1px solid #23272e; }
+.result-block:last-child { border-bottom: 0; }
+.table-wrap { overflow-x: auto; margin-top: 14px; }
+table { width: 100%; border-collapse: collapse; min-width: 620px; }
+th, td { border-bottom: 1px solid #22262c; padding: 13px 10px; text-align: left; vertical-align: top; font-size: .875rem; line-height: 1.5; }
+th { color: #737c87; font-size: .72rem; text-transform: uppercase; }
+td:first-child { color: #ff6a3d; font-family: ui-monospace, monospace; }
+.empty { color: #656d77; }
+.asset-list { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 14px; }
+.asset { border: 1px solid #2b3037; border-radius: 10px; padding: 9px 11px; background: #111419; color: #cbd0d6; font-size: .8125rem; }
+.asset b { color: #ff8a68; margin-right: 6px; }
+footer { display: flex; justify-content: space-between; gap: 20px; padding: 20px 2px 0; color: #666e78; font-size: .75rem; }
+
+@media (max-width: 900px) {
+  main { padding: 22px 16px; }
+  header { align-items: start; flex-direction: column; }
+  .workspace { grid-template-columns: 1fr; }
+  textarea { min-height: 360px; }
+}
+
+@media (max-width: 520px) {
+  .panel-heading, .editor-footer, footer { align-items: stretch; flex-direction: column; }
+  .file-button, button, .repo-link { text-align: center; }
+}

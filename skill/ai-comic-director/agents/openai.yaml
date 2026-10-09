@@ -1,0 +1,4 @@
+interface:
+  display_name: "AI 漫剧导演 Skill"
+  short_description: "把创意变成分集剧本、分镜、提示词和可复核的 LibTV 画布"
+  default_prompt: "Use $ai-comic-director to develop an original AI comic-drama episode and prepare its LibTV canvas without running paid generation."
